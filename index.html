@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bandera Ventures — Fund I</title>
+<meta name="description" content="Bandera Ventures Fund I — Investing in the Physical Economy. Pre-seed and seed stage investments in energy, industrials, and agriculture across Australia and New Zealand.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Bandera Ventures — Fund I">
+<meta property="og:description" content="Investing in the Physical Economy">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text-dark); background: var(--bg-white); line-height: 1.7; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ═══════════════════════════════════════════
+   CUSTOM PROPERTIES
+   ═══════════════════════════════════════════ */
+:root {
+  --bg-dark: #0B1120;
+  --bg-dark-alt: #101829;
+  --bg-white: #FFFFFF;
+  --bg-warm: #F9F8F5;
+  --bg-cream: #F3F1EC;
+  --text-dark: #1A1A2E;
+  --text-light: #FFFFFF;
+  --text-muted: #6B7280;
+  --text-muted-light: rgba(255,255,255,0.55);
+  --accent: #B8860B;
+  --accent-light: #D4A843;
+  --accent-glow: rgba(184,134,11,0.15);
+  --border-light: #E5E5E0;
+  --border-dark: rgba(255,255,255,0.08);
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --section-pad: clamp(60px, 10vh, 120px);
+  --content-width: 860px;
+  --wide-width: 1080px;
+}
+
+/* ═══════════════════════════════════════════
+   TYPOGRAPHY
+   ═══════════════════════════════════════════ */
+.t-serif { font-family: var(--font-serif); }
+.t-sans { font-family: var(--font-sans); }
+.t-mono { font-family: var(--font-mono); }
+
+h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 500; line-height: 1.2; }
+
+.headline-xl {
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+.headline-lg {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+.headline-md {
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.25;
+}
+.headline-sm {
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.body-lg { font-size: clamp(1.05rem, 1.3vw, 1.25rem); line-height: 1.8; }
+.body-md { font-size: 1rem; line-height: 1.75; }
+.body-sm { font-size: 0.875rem; line-height: 1.7; }
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.label-lg {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════
+   LAYOUT
+   ═══════════════════════════════════════════ */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--section-pad) 24px;
+  position: relative;
+}
+.section--short { min-height: auto; }
+.section--dark { background: var(--bg-dark); color: var(--text-light); }
+.section--dark-alt { background: var(--bg-dark-alt); color: var(--text-light); }
+.section--warm { background: var(--bg-warm); }
+.section--cream { background: var(--bg-cream); }
+
+.container { width: 100%; max-width: var(--content-width); margin: 0 auto; }
+.container--wide { max-width: var(--wide-width); }
+
+.gold-rule {
+  width: 48px;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 24px;
+}
+.gold-rule--center { margin-left: auto; margin-right: auto; }
+
+/* ═══════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════ */
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 16px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.4s, box-shadow 0.4s, transform 0.4s;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+.topbar.visible {
+  transform: translateY(0);
+  pointer-events: all;
+  background: rgba(11,17,32,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--border-dark);
+}
+.topbar__logo {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+.topbar__actions { display: flex; gap: 16px; align-items: center; }
+.topbar__btn {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  background: none;
+  border: 1px solid rgba(184,134,11,0.3);
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.topbar__btn:hover { background: rgba(184,134,11,0.1); border-color: var(--accent); }
+
+/* Progress dots */
+.progress-dots {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.progress-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: all 0.35s;
+  cursor: pointer;
+}
+.progress-dot.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+  transform: scale(1.3);
+}
+.progress-dot.light { background: rgba(26,26,46,0.12); border-color: rgba(26,26,46,0.1); }
+.progress-dot.light.active { background: var(--accent); border-color: var(--accent); }
+
+/* ═══════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  background: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-light);
+  padding: 60px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at 50% 40%, rgba(184,134,11,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero__confidential {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 48px;
+}
+.hero__name {
+  font-family: var(--font-sans);
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 24px;
+}
+.hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+  max-width: 700px;
+}
+.hero__subtitle {
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  color: rgba(255,255,255,0.5);
+  font-weight: 400;
+  margin-bottom: 48px;
+}
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin-bottom: 56px;
+}
+.hero__meta-item {
+  text-align: center;
+}
+.hero__meta-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 6px;
+}
+.hero__meta-value {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+}
+.hero__scroll-cue {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.3);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: pulse-down 2s ease-in-out infinite;
+}
+.hero__scroll-arrow {
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+}
+@keyframes pulse-down {
+  0%, 100% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 0.8; transform: translateX(-50%) translateY(6px); }
+}
+
+.hero__pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  border: 1px solid rgba(184,134,11,0.35);
+  padding: 12px 28px;
+  border-radius: 4px;
+  cursor: pointer;
+  background: none;
+  transition: all 0.3s;
+}
+.hero__pdf-btn:hover { background: rgba(184,134,11,0.08); border-color: var(--accent); }
+.hero__pdf-btn svg { width: 14px; height: 14px; }
+
+/* ═══════════════════════════════════════════
+   REVEAL ANIMATIONS
+   ═══════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.12s; }
+.reveal-delay-2 { transition-delay: 0.24s; }
+.reveal-delay-3 { transition-delay: 0.36s; }
+.reveal-delay-4 { transition-delay: 0.48s; }
+.reveal-delay-5 { transition-delay: 0.60s; }
+
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.reveal-fade.visible { opacity: 1; }
+
+/* ═══════════════════════════════════════════
+   STAT GRID
+   ═══════════════════════════════════════════ */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px 48px;
+}
+.stat-item {}
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 6px;
+  line-height: 1.1;
+}
+.section--dark .stat-value { color: var(--accent-light); }
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.section--dark .stat-label { color: var(--text-muted-light); }
+.stat-detail {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.section--dark .stat-detail { color: rgba(255,255,255,0.4); }
+
+/* ═══════════════════════════════════════════
+   QUOTE / BIG STATEMENT
+   ═══════════════════════════════════════════ */
+.big-statement {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3.2vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  max-width: 780px;
+}
+.big-statement em {
+  color: var(--accent-light);
+  font-style: normal;
+}
+
+/* ═══════════════════════════════════════════
+   CONTENT BLOCKS
+   ═══════════════════════════════════════════ */
+.section-label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.section--dark .section-label { color: var(--text-muted-light); }
+
+.content-block p {
+  margin-bottom: 1.5em;
+  color: var(--text-muted);
+}
+.content-block p:last-child { margin-bottom: 0; }
+.section--dark .content-block p { color: rgba(255,255,255,0.6); }
+
+.content-block strong { color: var(--text-dark); font-weight: 600; }
+.section--dark .content-block strong { color: var(--text-light); }
+
+/* Two column */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+}
+@media (max-width: 768px) {
+  .two-col { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* Three column */
+.three-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+@media (max-width: 768px) {
+  .three-col { grid-template-columns: 1fr; gap: 36px; }
+}
+
+/* Card */
+.card {
+  padding: 36px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  background: var(--bg-white);
+}
+.section--dark .card {
+  border-color: var(--border-dark);
+  background: rgba(255,255,255,0.03);
+}
+.card__number {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 16px;
+  opacity: 0.3;
+}
+.section--dark .card__number { color: var(--accent-light); }
+.card__title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+.card__text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.section--dark .card__text { color: rgba(255,255,255,0.55); }
+
+/* ═══════════════════════════════════════════
+   TABLES
+   ═══════════════════════════════════════════ */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.data-table th {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--border-light);
+}
+.data-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-light);
+  vertical-align: top;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table .mono { font-family: var(--font-mono); font-size: 0.82rem; }
+.data-table .muted { color: var(--text-muted); }
+.data-table .accent { color: var(--accent); font-weight: 600; }
+.data-table .highlight-row { background: var(--accent-glow); }
+
+.section--dark .data-table th {
+  color: var(--text-muted-light);
+  border-bottom-color: var(--border-dark);
+}
+.section--dark .data-table td {
+  border-bottom-color: var(--border-dark);
+  color: rgba(255,255,255,0.75);
+}
+.section--dark .data-table .muted { color: rgba(255,255,255,0.4); }
+
+/* Scrollable table wrapper for mobile */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -24px;
+  padding: 0 24px;
+}
+
+/* ═══════════════════════════════════════════
+   COMPARISON BAR
+   ═══════════════════════════════════════════ */
+.compare-bars { display: flex; flex-direction: column; gap: 28px; margin-top: 32px; }
+.compare-bar {}
+.compare-bar__label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+.section--dark .compare-bar__label { color: var(--text-light); }
+.compare-bar__track {
+  height: 36px;
+  background: rgba(184,134,11,0.08);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.compare-bar__fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 0;
+}
+.compare-bar__fill.visible { /* width set inline */ }
+.compare-bar__fill-text {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+  white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════════
+   PILL / TAG
+   ═══════════════════════════════════════════ */
+.pill {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 3px;
+  background: var(--accent-glow);
+  color: var(--accent);
+}
+
+/* ═══════════════════════════════════════════
+   PHILOSOPHY ITEMS
+   ═══════════════════════════════════════════ */
+.philosophy-item {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border-dark);
+}
+.philosophy-item:last-child { border-bottom: none; }
+.philosophy-item__quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-style: italic;
+  color: var(--accent-light);
+  margin-bottom: 12px;
+}
+.philosophy-item__text {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+/* ═══════════════════════════════════════════
+   TERMS GRID
+   ═══════════════════════════════════════════ */
+.terms-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border-dark);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.terms-grid__item {
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--border-dark);
+  border-right: 1px solid var(--border-dark);
+}
+.terms-grid__item:nth-child(2n) { border-right: none; }
+.terms-grid__item:nth-last-child(-n+2) { border-bottom: none; }
+.terms-grid__label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted-light);
+  margin-bottom: 6px;
+}
+.terms-grid__value {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--text-light);
+}
+.terms-grid__value small {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+}
+@media (max-width: 600px) {
+  .terms-grid { grid-template-columns: 1fr; }
+  .terms-grid__item { border-right: none !important; }
+  .terms-grid__item:last-child { border-bottom: none; }
+}
+
+/* ═══════════════════════════════════════════
+   RISK ITEMS
+   ═══════════════════════════════════════════ */
+.risk-list { display: flex; flex-direction: column; gap: 28px; }
+.risk-item { padding-left: 20px; border-left: 2px solid var(--accent); }
+.risk-item__title {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.risk-item__text { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; }
+
+/* ═══════════════════════════════════════════
+   FOOTER / CTA
+   ═══════════════════════════════════════════ */
+.footer-cta {
+  text-align: center;
+}
+.footer-cta__line {
+  width: 48px;
+  height: 1px;
+  background: var(--accent);
+  margin: 0 auto 32px;
+}
+.footer-legal {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.25);
+  margin-top: 48px;
+  line-height: 1.8;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .section { padding: clamp(48px, 8vh, 80px) 20px; }
+  .hero__meta { gap: 20px; }
+  .stat-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .progress-dots { display: none; }
+  .hero__scroll-cue { display: none; }
+}
+@media (max-width: 480px) {
+  .stat-grid { grid-template-columns: 1fr; }
+  .three-col { gap: 24px; }
+}
+
+/* ═══════════════════════════════════════════
+   PRINT STYLES (for PDF generation)
+   ═══════════════════════════════════════════ */
+@media print {
+  .topbar, .progress-dots, .hero__scroll-cue { display: none !important; }
+  .section { min-height: auto !important; padding: 36px 0 !important; page-break-inside: avoid; }
+  .hero { min-height: auto !important; padding: 48px 0 !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  body { font-size: 11pt; color: #000; }
+  .section--dark, .section--dark-alt { background: #fff !important; color: #000 !important; }
+  .section--dark .section-label,
+  .section--dark .content-block p,
+  .section--dark .stat-label,
+  .section--dark .card__text,
+  .section--dark .philosophy-item__text { color: #555 !important; }
+  .section--dark .content-block strong,
+  .section--dark .card__title,
+  .section--dark .compare-bar__label,
+  .section--dark .terms-grid__value { color: #000 !important; }
+  .hero__name, .stat-value, .accent, .big-statement em,
+  .philosophy-item__quote, .card__number { color: #8B6914 !important; }
+  .hero__title, .headline-xl, .headline-lg, .headline-md { color: #000 !important; }
+  .terms-grid, .terms-grid__item, .card { border-color: #ddd !important; }
+  .data-table th { border-bottom-color: #ccc !important; }
+  .data-table td { border-bottom-color: #eee !important; }
+  .compare-bar__track { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .compare-bar__fill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  @page { margin: 1.5cm; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════════
+     TOP BAR
+     ═══════════════════════════════════════════ -->
+<nav class="topbar" id="topbar">
+  <div class="topbar__logo">Bandera Ventures</div>
+  <div class="topbar__actions">
+    <button class="topbar__btn" onclick="window.print()">
+      ↓ PDF
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     PROGRESS DOTS
+     ═══════════════════════════════════════════ -->
+<div class="progress-dots" id="progressDots"></div>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 0: HERO
+     ═══════════════════════════════════════════ -->
+<section class="hero" data-section="0" data-theme="dark">
+  <div class="hero__confidential">Confidential &nbsp;·&nbsp; February 2026</div>
+  <div class="hero__name">Bandera Ventures</div>
+  <h1 class="hero__title">Investing in the<br>Physical Economy</h1>
+  <p class="hero__subtitle">Fund I &nbsp;·&nbsp; Thesis & Investment Strategy</p>
+
+  <div class="hero__meta">
+    <div class="hero__meta-item">
+      <div class="hero__meta-label">Fund Size</div>
+      <div class="hero__meta-value">A$20–30M</div>
+    </div>
+    <div class="hero__meta-item">
+      <div class="hero__meta-label">Stage</div>
+      <div class="hero__meta-value">Pre-Seed & Seed</div>
+    </div>
+    <div class="hero__meta-item">
+      <div class="hero__meta-label">Sectors</div>
+      <div class="hero__meta-value">Energy · Industrials · Ag</div>
+    </div>
+    <div class="hero__meta-item">
+      <div class="hero__meta-label">Geography</div>
+      <div class="hero__meta-value">AU/NZ (90%)</div>
+    </div>
+    <div class="hero__meta-item">
+      <div class="hero__meta-label">Check Size</div>
+      <div class="hero__meta-value">A$600K–1M</div>
+    </div>
+  </div>
+
+  <button class="hero__pdf-btn" onclick="window.print()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download PDF
+  </button>
+
+  <div class="hero__scroll-cue">
+    <span>Scroll</span>
+    <div class="hero__scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 1: THE ARBITRAGE (big statement)
+     ═══════════════════════════════════════════ -->
+<section class="section section--dark-alt" data-section="1" data-theme="dark">
+  <div class="container" style="text-align:center;">
+    <div class="reveal">
+      <div class="gold-rule gold-rule--center"></div>
+      <p class="big-statement" style="margin: 0 auto;">
+        Australian hardtech founders build companies at seed valuations <em>50–70% lower</em> than US equivalents — then scale into US capital markets at US valuations.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 2: EXECUTIVE SUMMARY
+     ═══════════════════════════════════════════ -->
+<section class="section" data-section="2" data-theme="light">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Executive Summary</div>
+      <div class="gold-rule"></div>
+    </div>
+    <div class="content-block body-lg reveal reveal-delay-1">
+      <p><strong>Bandera Ventures invests in early-stage companies building real technology for the physical economy</strong> — energy systems, industrial automation, critical minerals processing, and agricultural technology — primarily in Australia and New Zealand.</p>
+      <p>Australia is one of the most resource-rich, strategically important, and politically stable countries in the world, yet it systematically underinvests in innovation. The result is a market with <strong>world-class technical talent</strong>, <strong>globally relevant IP</strong>, and <strong>seed-stage valuations 50–70% lower</strong> than comparable US deals. Bandera exists to capture this mispricing.</p>
+      <p>Three converging forces accelerate this opportunity: the global electrification of transportation, industry, and heating; the deployment of AI into physical systems; and the geopolitical imperative to build sovereign supply chains for critical minerals. Australia sits at the intersection of all three.</p>
+    </div>
+    <div class="stat-grid reveal reveal-delay-2" style="margin-top: 48px;">
+      <div class="stat-item">
+        <div class="stat-value">18</div>
+        <div class="stat-label">Portfolio companies</div>
+        <div class="stat-detail">Built over 5 years of angel investing</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">6.4x</div>
+        <div class="stat-label">Top TVPI</div>
+        <div class="stat-detail">Sicona Battery Technologies</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">10x</div>
+        <div class="stat-label">Best Performer</div>
+        <div class="stat-detail">5B rapid-deploy solar</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">20–25</div>
+        <div class="stat-label">Target companies</div>
+        <div class="stat-detail">Over 4-year deployment</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 3: WHY AUSTRALIA — STRATEGIC
+     ═══════════════════════════════════════════ -->
+<section class="section section--dark" data-section="3" data-theme="dark">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Why Australia</div>
+      <div class="gold-rule"></div>
+      <h2 class="headline-lg" style="margin-bottom: 20px;">A Critical Minerals Superpower</h2>
+    </div>
+    <div class="content-block body-lg reveal reveal-delay-1">
+      <p>Most US investors think of Australia as a commodity exporter — iron ore, natural gas, maybe wine. That's the old story. The new story is that Australia has become <strong>one of the most strategically important technology markets in the Indo-Pacific</strong>, with direct relevance to US national security, energy security, and supply chain resilience.</p>
+    </div>
+    <div class="three-col reveal reveal-delay-2" style="margin-top: 48px;">
+      <div class="card">
+        <div class="card__title" style="color: var(--accent-light);">#1 Lithium</div>
+        <div class="card__text">World's largest reserves — the building block of batteries and energy storage.</div>
+      </div>
+      <div class="card">
+        <div class="card__title" style="color: var(--accent-light);">#2 Cobalt</div>
+        <div class="card__text">Second-largest reserves — essential for semiconductors and defense systems.</div>
+      </div>
+      <div class="card">
+        <div class="card__title" style="color: var(--accent-light);">AUKUS Aligned</div>
+        <div class="card__text">The US–Australia Critical Minerals Agreement and AUKUS alliance make Australia the most obvious allied-nation supply chain alternative to China.</div>
+      </div>
+    </div>
+    <div class="content-block body-md reveal reveal-delay-3" style="margin-top: 36px;">
+      <p>Plus significant deposits of nickel, copper, and rare earth elements. As the US works to reduce dependence on Chinese-controlled supply chains, <strong>Australia is the answer</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 4: WHY AUSTRALIA — UNDERFUNDED
+     ═══════════════════════════════════════════ -->
+<section class="section section--warm" data-section="4" data-theme="light">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Why Australia</div>
+      <div class="gold-rule"></div>
+      <h2 class="headline-lg" style="margin-bottom: 20px;">World-Class Innovation,<br>Systematically Underfunded</h2>
+    </div>
+    <div class="content-block body-lg reveal reveal-delay-1">
+      <p>Australia has produced foundational technologies: <strong>Wi-Fi, cochlear implants, and high-efficiency photovoltaic solar cells.</strong> Its university system is globally ranked. CSIRO — the national science agency — is comparable to DARPA in scope.</p>
+      <p>But Australia's track record of <em>commercializing</em> these innovations is poor. Capital flows overwhelmingly into real estate and mining, not technology.</p>
+    </div>
+    <div class="compare-bars reveal reveal-delay-2">
+      <div class="compare-bar">
+        <div class="compare-bar__label">Residential Housing Investment (per capita, AU vs US index)</div>
+        <div class="compare-bar__track">
+          <div class="compare-bar__fill bar-animate" data-width="100%" style="background: var(--text-muted);">
+            <span class="compare-bar__fill-text">Australia: 3× more</span>
+          </div>
+        </div>
+      </div>
+      <div class="compare-bar">
+        <div class="compare-bar__label">Venture Capital Investment (per capita, AU vs US index)</div>
+        <div class="compare-bar__track">
+          <div class="compare-bar__fill bar-animate" data-width="33%" style="background: var(--accent);">
+            <span class="compare-bar__fill-text">Australia: 67% less</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-block body-md reveal reveal-delay-3" style="margin-top: 32px;">
+      <p>Australia's A$3.5 trillion superannuation system — the world's fourth-largest pension pool — overwhelmingly favors listed equities and real estate. Venture capital is a rounding error. The result: <strong>extraordinary technical talent and almost no early-stage funding for hardware and deep-tech.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 5: THE VALUATION ARBITRAGE
+     ═══════════════════════════════════════════ -->
+<section class="section section--dark" data-section="5" data-theme="dark">
+  <div class="container" style="text-align: center;">
+    <div class="reveal">
+      <div class="section-label">The Structural Edge</div>
+      <div class="gold-rule gold-rule--center"></div>
+      <h2 class="headline-lg" style="margin-bottom: 48px;">The Valuation Arbitrage</h2>
+    </div>
+    <div class="two-col reveal reveal-delay-1" style="text-align: left; max-width: 700px; margin: 0 auto;">
+      <div style="text-align:center;">
+        <div class="stat-value" style="font-size: clamp(2rem,4vw,3rem);">A$5–30M</div>
+        <div class="stat-label" style="margin-top: 8px;">Australian Seed Valuation</div>
+        <div class="stat-detail">US$3–20M equivalent</div>
+      </div>
+      <div style="text-align:center;">
+        <div class="stat-value" style="font-size: clamp(2rem,4vw,3rem); color: var(--text-muted-light);">US$15–60M+</div>
+        <div class="stat-label" style="margin-top: 8px;">Comparable US Seed Valuation</div>
+        <div class="stat-detail">Same founders, same tech, same TAM</div>
+      </div>
+    </div>
+    <div class="content-block body-md reveal reveal-delay-2" style="margin-top: 48px; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto;">
+      <p>This gap persists because of structural features: a pension system that ignores venture, family offices concentrated in property and mining, and very few dedicated seed funds in hardtech. By Series A and beyond, international capital — Climate Tech Partners, Main Sequence, Virescent — actively competes. <strong>Bandera captures the discount before they arrive.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 6: WHY NOW
+     ═══════════════════════════════════════════ -->
+<section class="section" data-section="6" data-theme="light">
+  <div class="container container--wide">
+    <div class="reveal">
+      <div class="section-label">Why Now</div>
+      <div class="gold-rule"></div>
+      <h2 class="headline-lg" style="margin-bottom: 48px;">Three Converging Forces</h2>
+    </div>
+    <div class="three-col">
+      <div class="card reveal reveal-delay-1">
+        <div class="card__number">01</div>
+        <div class="card__title">Electrification of Everything</div>
+        <div class="card__text">For the first time in human history, the cheapest way to create energy is harnessing the sun. As the cost gap widens, electrification becomes the dominant trend in transportation, heavy industry, HVAC, and agriculture — driven by economics, not environmentalism. The IRA, CHIPS Act, and DOE funding are creating enormous demand for exactly the technologies Australian founders are building.</div>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <div class="card__number">02</div>
+        <div class="card__title">AI Moves Beyond Software</div>
+        <div class="card__text">The next wave deploys intelligence into physical systems: autonomous mining, precision agriculture, grid optimization, industrial robotics. Australia's largest industries — mining, agriculture, energy — are prime deployment environments, giving Australian startups a testing ground US companies cannot easily access.</div>
+      </div>
+      <div class="card reveal reveal-delay-3">
+        <div class="card__number">03</div>
+        <div class="card__title">Supply Chain Sovereignty</div>
+        <div class="card__text">Building Western-allied supply chains for critical minerals and energy infrastructure is now bipartisan US policy. The Critical Minerals Agreement, AUKUS, and DOD procurement all point to a multi-decade investment cycle in exactly the sectors where Bandera operates.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 7: THE FUNDING GAP
+     ═══════════════════════════════════════════ -->
+<section class="section section--cream" data-section="7" data-theme="light">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">The Opportunity</div>
+      <div class="gold-rule"></div>
+      <h2 class="headline-lg" style="margin-bottom: 20px;">The Seed-Stage Funding Gap</h2>
+    </div>
+    <div class="content-block body-lg reveal reveal-delay-1">
+      <p>At Series A and beyond, international capital actively competes for the best Australian hardtech deals. Growth-stage funds — Main Sequence, Virescent, Climate Tech Partners, Adamantem — are well-capitalized and active. Infrastructure investors like Wollemi and HMC fund first-of-kind projects.</p>
+      <p><strong>But at seed, the options are extremely limited.</strong> The gap is filled by angel syndicates and government grants — neither of which can provide the speed, conviction, or follow-on support that contrarian early-stage investing requires.</p>
+      <p>This creates Bandera's structural advantage. With <strong>minimal competition at seed</strong>, the fund has its pick of deals, commands favorable terms, and builds relationships with founders before other institutional capital arrives.</p>
+    </div>
+    <div class="reveal reveal-delay-2" style="margin-top: 40px; padding: 28px 32px; border-left: 3px solid var(--accent); background: rgba(184,134,11,0.04); border-radius: 0 6px 6px 0;">
+      <p class="body-md" style="margin:0; color: var(--text-dark);"><strong>The strategy:</strong> Invest early in Australia. Position portfolio companies for later-stage US and international capital at significantly higher valuations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 8: INVESTMENT STRATEGY
+     ═══════════════════════════════════════════ -->
+<section class="section" data-section="8" data-theme="light">
+  <div class="container container--wide">
+    <div class="reveal">
+      <div class="section-label">Investment Strategy</div>
+      <div class="gold-rule"></div>
+      <h2 class="headline-lg" style="margin-bottom: 48px;">What We Invest In</h2>
+    </div>
+    <div class="three-col">
+      <div class="reveal reveal-delay-1">
+        <h3 class="headline-sm" style="margin-bottom: 12px;">Hard Problems</h3>
+        <p class="body-md" style="color: var(--text-muted);">Critical challenges in energy generation & storage, grid infrastructure, industrial decarbonization, critical minerals processing, agricultural productivity, and advanced manufacturing.</p>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <h3 class="headline-sm" style="margin-bottom: 12px;">Exceptional Founders</h3>
+        <p class="body-md" style="color: var(--text-muted);">Technical operators who combine deep domain expertise with commercial instinct. Founder quality is the single most important criterion at the seed stage.</p>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <h3 class="headline-sm" style="margin-bottom: 12px;">Real Technology</h3>
+        <p class="body-md" style="color: var(--text-muted);">Innovation with a physical footprint and defensible IP. Companies that marry hardware and software to create durable competitive moats — not incremental software plays.</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 64px;">
+      <div class="reveal">
+        <h2 class="headline-md" style="margin-bottom: 36px;">How We Invest</h2>
+      </div>
+      <div class="stat-grid reveal reveal-delay-1">
+        <div class="stat-item">
+          <div class="stat-value">A$600K–1M</div>
+          <div class="stat-label">Check Size</div>
+          <div class="stat-detail">Uniform across portfolio</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">Pre-Seed / Seed</div>
+          <div class="stat-label" style="font-family:var(--font-mono);text-transform:none;letter-spacing:0;">Stage</div>
+          <div class="stat-detail">Before institutional competition</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">Nil</div>
+          <div class="stat-label">Reserve Strategy</div>
+          <div class="stat-detail">Maximizes initial ownership</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">20–25</div>
+          <div class="stat-label">Companies</div>
+          <div class="stat-detail">Over 4-year deployment</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">Advisory</div>
+          <div class="stat-label">Governance Model</div>
+          <div class="stat-detail">High-touch support, not board seats</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">Standard</div>
+          <div class="stat-label">Deal Terms</div>
+          <div class="stat-detail">Reduces friction, accelerates execution</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 9: PHILOSOPHY
+     ═══════════════════════════════════════════ -->
+<section class="section section--dark" data-section="9" data-theme="dark">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Investment Philosophy</div>
+      <div class="gold-rule"></div>
+    </div>
+    <div class="philosophy-item reveal reveal-delay-1">
+      <div class="philosophy-item__quote">"Impact is not a strategy."</div>
+      <div class="philosophy-item__text">Large enterprises adopt new technologies to improve the bottom line. Solutions must deliver commercial ROI independent of environmental benefit. The most successful companies are "double-green": they deliver both financial returns and positive environmental outcomes, making them attractive regardless of regulatory shifts.</div>
+    </div>
+    <div class="philosophy-item reveal reveal-delay-2">
+      <div class="philosophy-item__quote">"Back the jockey, not just the horse."</div>
+      <div class="philosophy-item__text">At the seed stage, the technology is early and the market is uncertain. The founder's ability to adapt, sell, and execute is the primary driver of outcomes.</div>
+    </div>
+    <div class="philosophy-item reveal reveal-delay-3">
+      <div class="philosophy-item__quote">"Selling is believing."</div>
+      <div class="philosophy-item__text">Hardtech founders tend to over-index on R&D and under-index on commercialization. Bandera actively pushes portfolio companies toward early customer engagement and revenue.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 10: TRACK RECORD
+     ═══════════════════════════════════════════ -->
+<section class="section section--short section--warm" data-section="10" data-theme="light" style="padding-top: var(--section-pad); padding-bottom: var(--section-pad);">
+  <div class="container container--wide">
+    <div class="reveal">
+      <div class="section-label">Track Record</div>
+      <div class="gold-rule"></div>
+      <h2 class="headline-lg" style="margin-bottom: 12px;">18 Companies. Five Years.</h2>
+      <p class="body-md" style="color: var(--text-muted); margin-bottom: 40px; max-width: 640px;">Built deal-by-deal with a syndicate of sophisticated investors — demonstrating the ability to source, evaluate, and support high-quality hardtech companies before a dedicated fund existed.</p>
+    </div>
+    <div class="table-wrap reveal reveal-delay-1">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Location</th>
+            <th>Description</th>
+            <th style="text-align:right;">Entry Val.</th>
+            <th style="text-align:right;">TVPI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td><strong>5B</strong></td>
+            <td class="muted">Sydney</td>
+            <td>Rapid-deployment solar arrays</td>
+            <td class="mono" style="text-align:right;">A$5M</td>
+            <td class="mono accent" style="text-align:right;">10.0x</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>Sicona</strong></td>
+            <td class="muted">Wollongong</td>
+            <td>Silicon-based anode materials</td>
+            <td class="mono" style="text-align:right;">A$14M</td>
+            <td class="mono accent" style="text-align:right;">6.4x</td>
+          </tr>
+          <tr>
+            <td><strong>MicroTau</strong></td>
+            <td class="muted">Sydney</td>
+            <td>Drag-reducing plane coatings</td>
+            <td class="mono" style="text-align:right;">A$16M</td>
+            <td class="mono accent" style="text-align:right;">4.2x</td>
+          </tr>
+          <tr>
+            <td><strong>Infravision</strong></td>
+            <td class="muted">Sydney / Austin</td>
+            <td>Transmission-stringing drones</td>
+            <td class="mono" style="text-align:right;">A$108M</td>
+            <td class="mono accent" style="text-align:right;">3.5x</td>
+          </tr>
+          <tr>
+            <td><strong>Sea Forest</strong> <span class="pill" style="margin-left:6px;">IPO</span></td>
+            <td class="muted">Tasmania</td>
+            <td>Livestock feed supplements</td>
+            <td class="mono" style="text-align:right;">A$15M</td>
+            <td class="mono accent" style="text-align:right;">3.0x</td>
+          </tr>
+          <tr>
+            <td><strong>Phoenix Tailings</strong></td>
+            <td class="muted">Boston</td>
+            <td>Rare-earth extraction & refining</td>
+            <td class="mono" style="text-align:right;">A$75M</td>
+            <td class="mono accent" style="text-align:right;">2.6x</td>
+          </tr>
+          <tr>
+            <td><strong>Rainstick</strong></td>
+            <td class="muted">Cairns</td>
+            <td>Electricity-based seed priming</td>
+            <td class="mono" style="text-align:right;">A$9M</td>
+            <td class="mono" style="text-align:right;">2.2x</td>
+          </tr>
+          <tr>
+            <td><strong>Bueno</strong> <span class="pill" style="margin-left:6px;">Acquired</span></td>
+            <td class="muted">Sydney</td>
+            <td>Building energy analytics</td>
+            <td class="mono" style="text-align:right;">A$29M</td>
+            <td class="mono" style="text-align:right;">1.4x</td>
+          </tr>
+          <tr>
+            <td><strong>Conry Tech</strong></td>
+            <td class="muted">Melbourne</td>
+            <td>Miniaturized commercial HVAC</td>
+            <td class="mono" style="text-align:right;">A$24M</td>
+            <td class="mono" style="text-align:right;">1.4x</td>
+          </tr>
+          <tr>
+            <td><strong>Crux</strong></td>
+            <td class="muted">Sydney</td>
+            <td>Edge infrastructure deployment</td>
+            <td class="mono" style="text-align:right;">A$10M</td>
+            <td class="muted mono" style="text-align:right;">Recent</td>
+          </tr>
+          <tr>
+            <td><strong>DIT AgTech</strong></td>
+            <td class="muted">Toowoomba</td>
+            <td>Water-dosing supplement system</td>
+            <td class="mono" style="text-align:right;">A$55M</td>
+            <td class="muted mono" style="text-align:right;">Recent</td>
+          </tr>
+          <tr>
+            <td><strong>Leaptran</strong></td>
+            <td class="muted">Houston</td>
+            <td>Solar generation forecasting</td>
+            <td class="mono" style="text-align:right;">A$8M</td>
+            <td class="muted mono" style="text-align:right;">Recent</td>
+          </tr>
+          <tr>
+            <td><strong>RELA</strong></td>
+            <td class="muted">Sydney</td>
+            <td>Renewable land access platform</td>
+            <td class="mono" style="text-align:right;">A$10M</td>
+            <td class="muted mono" style="text-align:right;">Recent</td>
+          </tr>
+          <tr>
+            <td><strong>Kanin Energy</strong></td>
+            <td class="muted">Calgary</td>
+            <td>Waste-heat to energy developer</td>
+            <td class="mono" style="text-align:right;">A$15M</td>
+            <td class="muted mono" style="text-align:right;">Recent</td>
+          </tr>
+          <tr>
+            <td><strong>Frontiers Market</strong></td>
+            <td class="muted">Austin</td>
+            <td>AI-based livestock weight tracking</td>
+            <td class="mono" style="text-align:right;">A$30M</td>
+            <td class="muted mono" style="text-align:right;">Recent</td>
+          </tr>
+          <tr>
+            <td><strong>HullBot</strong></td>
+            <td class="muted">Sydney</td>
+            <td>Hull-cleaning robots</td>
+            <td class="mono" style="text-align:right;">A$53M</td>
+            <td class="muted mono" style="text-align:right;">Recent</td>
+          </tr>
+          <tr>
+            <td><strong>CounterCurrent</strong></td>
+            <td class="muted">Sydney</td>
+            <td>AI-based ship routing</td>
+            <td class="mono" style="text-align:right;">A$6M</td>
+            <td class="muted mono" style="text-align:right;">Recent</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="reveal reveal-delay-2" style="margin-top: 24px;">
+      <p class="body-sm" style="color: var(--text-muted);">Entry valuations and check sizes refer to first investment. TVPI as of most recent priced round. "Recent" indicates no subsequent priced round. Sea Forest listed on the ASX in November 2025 (3× MOIC). Bueno acquired January 2026 (1.4× upfront, up to 4.5× on earn-out).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 11: US EXIT PATH
+     ═══════════════════════════════════════════ -->
+<section class="section section--dark" data-section="11" data-theme="dark">
+  <div class="container" style="text-align: center;">
+    <div class="reveal">
+      <div class="section-label">The US Exit Path</div>
+      <div class="gold-rule gold-rule--center"></div>
+      <h2 class="headline-md" style="margin-bottom: 24px; max-width: 640px; margin-left: auto; margin-right: auto;">Australian startups build at home.<br>They scale into US markets.</h2>
+    </div>
+    <div class="content-block body-lg reveal reveal-delay-1" style="text-align: left; max-width: 640px; margin: 0 auto;">
+      <p>Bandera portfolio companies are already operating in <strong>Austin, Houston, Boston, and Calgary.</strong> The fund actively helps portfolio companies navigate the Australia-to-US expansion — introductions to US customers, partners, and later-stage investors.</p>
+      <p>The arbitrage between Australian seed pricing and US growth-stage pricing is the structural edge. Invest at A$5–30M in Australia. Exit into US capital markets at US valuations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 12: FOUNDING PARTNER
+     ═══════════════════════════════════════════ -->
+<section class="section" data-section="12" data-theme="light">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Founding Partner</div>
+      <div class="gold-rule"></div>
+      <h2 class="headline-lg" style="margin-bottom: 24px;">Jeremy Atkin</h2>
+    </div>
+    <div class="content-block body-lg reveal reveal-delay-1">
+      <p>Jeremy is an experienced early-stage investor with a proven track record backing Australian hardtech startups. He has personally managed the full investment lifecycle — sourcing, due diligence, capital raising, execution, and portfolio support — across the 18-company portfolio.</p>
+      <p>Prior to Bandera, Jeremy was a founding employee of the corporate venture capital funds at <strong>Lane Crawford Joyce Group</strong> and <strong>Woolworths (W23)</strong>, where his investments included Eucalyptus, Sonder, and Samsara. He began his career at <strong>LEK Consulting</strong>, developing a first-principles analytical approach to due diligence for private equity transactions.</p>
+      <p>Jeremy holds a Bachelor of Commerce (Liberal Studies) from the University of Sydney with <strong>First Class Honours in Economics</strong>.</p>
+    </div>
+    <div class="reveal reveal-delay-2" style="margin-top: 36px; padding: 28px 32px; border-left: 3px solid var(--accent); background: rgba(184,134,11,0.04); border-radius: 0 6px 6px 0;">
+      <p class="body-md" style="margin:0 0 8px;"><strong>Operating Model</strong></p>
+      <p class="body-sm" style="margin:0; color: var(--text-muted);">Bandera operates as a solo-GP fund supported by an Advisory Board and Investment Committee composed of experienced executives spanning private equity, family office management, investment banking, and transaction advisory. This structure enables speed, conviction, and absolute accountability — critical advantages in contrarian, early-stage hardtech where consensus-driven funds struggle to act.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 13: FUND TERMS
+     ═══════════════════════════════════════════ -->
+<section class="section section--dark" data-section="13" data-theme="dark">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Fund Structure</div>
+      <div class="gold-rule"></div>
+      <h2 class="headline-lg" style="margin-bottom: 40px;">Key Terms</h2>
+    </div>
+    <div class="terms-grid reveal reveal-delay-1">
+      <div class="terms-grid__item">
+        <div class="terms-grid__label">Fund Size</div>
+        <div class="terms-grid__value">A$20–30M <small>~US$13–20M</small></div>
+      </div>
+      <div class="terms-grid__item">
+        <div class="terms-grid__label">Fund Life</div>
+        <div class="terms-grid__value">10 years</div>
+      </div>
+      <div class="terms-grid__item">
+        <div class="terms-grid__label">Management Fee</div>
+        <div class="terms-grid__value">2% <small>per annum on capital called</small></div>
+      </div>
+      <div class="terms-grid__item">
+        <div class="terms-grid__label">Hurdle Rate</div>
+        <div class="terms-grid__value">8% IRR <small>full catch-up</small></div>
+      </div>
+      <div class="terms-grid__item">
+        <div class="terms-grid__label">Carried Interest</div>
+        <div class="terms-grid__value">20–25% <small>tiered above hurdle</small></div>
+      </div>
+      <div class="terms-grid__item">
+        <div class="terms-grid__label">Deployment</div>
+        <div class="terms-grid__value">4 years</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 56px;">
+      <div class="reveal">
+        <h3 class="headline-sm" style="margin-bottom: 12px; color: var(--accent-light);">US Investor Access</h3>
+      </div>
+      <div class="content-block body-md reveal reveal-delay-1">
+        <p>Bandera is establishing a <strong>US-domiciled co-investment vehicle (Delaware LP)</strong> to provide US investors with a familiar, tax-efficient structure. US LPs invest through the Delaware entity, participating alongside the main fund on the same terms and pro-rata basis. Standard K-1 reporting for US tax compliance.</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 48px;">
+      <div class="reveal">
+        <h3 class="headline-sm" style="margin-bottom: 20px; color: var(--accent-light);">Co-Investment Rights</h3>
+      </div>
+      <div class="table-wrap reveal reveal-delay-1">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>LP Commitment</th>
+              <th>Co-Invest Rights</th>
+              <th>Terms</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mono">≥ A$3M</td>
+              <td>Up to 2× fund commitment (pro-rata, per deal)</td>
+              <td class="mono">2% / 5% carry</td>
+            </tr>
+            <tr>
+              <td class="mono">≥ A$500K <small style="color:rgba(255,255,255,0.35)">(1st close)</small> / ≥ A$1M</td>
+              <td>Up to 1× fund commitment (pro-rata, per deal)</td>
+              <td class="mono">5% / 10% carry</td>
+            </tr>
+            <tr>
+              <td class="mono">All others</td>
+              <td>Up to 0.5× fund commitment (pro-rata, per deal)</td>
+              <td class="mono">10% / 20% carry</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="content-block body-sm reveal reveal-delay-2" style="margin-top: 16px;">
+        <p>Bandera's nil-reserve strategy creates significant co-investment opportunities. When portfolio companies raise follow-on rounds, LPs have pro-rata rights to invest directly alongside or through SPVs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 14: RETURN TARGETS
+     ═══════════════════════════════════════════ -->
+<section class="section section--short" data-section="14" data-theme="light" style="padding-top: var(--section-pad); padding-bottom: var(--section-pad);">
+  <div class="container container--wide">
+    <div class="reveal">
+      <div class="section-label">Return Targets</div>
+      <div class="gold-rule"></div>
+      <h2 class="headline-lg" style="margin-bottom: 12px;">Modeled Outcomes</h2>
+      <p class="body-md" style="color: var(--text-muted); margin-bottom: 40px; max-width: 640px;">Portfolio construction is optimized for power-law dynamics: a small number of outsized winners drive the majority of returns.</p>
+    </div>
+
+    <div class="table-wrap reveal reveal-delay-1">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Outcome</th>
+            <th style="text-align:right;">Exit Value</th>
+            <th style="text-align:right;">MOIC</th>
+            <th style="text-align:center;">Low</th>
+            <th style="text-align:center;">Base</th>
+            <th style="text-align:center;">Target</th>
+            <th style="text-align:center;">High</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Grand Slam</strong></td>
+            <td class="mono" style="text-align:right;">$1B+</td>
+            <td class="mono" style="text-align:right;">60×</td>
+            <td style="text-align:center;" class="muted">0</td>
+            <td style="text-align:center;" class="muted">0</td>
+            <td style="text-align:center;" class="accent">1</td>
+            <td style="text-align:center;" class="accent">2</td>
+          </tr>
+          <tr>
+            <td><strong>Home Run</strong></td>
+            <td class="mono" style="text-align:right;">$500M</td>
+            <td class="mono" style="text-align:right;">30×</td>
+            <td style="text-align:center;" class="muted">0</td>
+            <td style="text-align:center;" class="accent">1</td>
+            <td style="text-align:center;" class="accent">2</td>
+            <td style="text-align:center;" class="accent">3</td>
+          </tr>
+          <tr>
+            <td><strong>Triple</strong></td>
+            <td class="mono" style="text-align:right;">$200M</td>
+            <td class="mono" style="text-align:right;">12×</td>
+            <td style="text-align:center;">1</td>
+            <td style="text-align:center;">3</td>
+            <td style="text-align:center;">3</td>
+            <td style="text-align:center;">4</td>
+          </tr>
+          <tr>
+            <td><strong>Double</strong></td>
+            <td class="mono" style="text-align:right;">$100M</td>
+            <td class="mono" style="text-align:right;">6×</td>
+            <td style="text-align:center;">4</td>
+            <td style="text-align:center;">4</td>
+            <td style="text-align:center;">4</td>
+            <td style="text-align:center;">4</td>
+          </tr>
+          <tr>
+            <td><strong>Single</strong></td>
+            <td class="mono" style="text-align:right;">$50M</td>
+            <td class="mono" style="text-align:right;">3×</td>
+            <td style="text-align:center;">4</td>
+            <td style="text-align:center;">5</td>
+            <td style="text-align:center;">5</td>
+            <td style="text-align:center;">5</td>
+          </tr>
+          <tr>
+            <td><strong>Strike Out</strong></td>
+            <td class="mono" style="text-align:right;">$0</td>
+            <td class="mono" style="text-align:right;">0×</td>
+            <td style="text-align:center;" class="muted">15</td>
+            <td style="text-align:center;" class="muted">11</td>
+            <td style="text-align:center;" class="muted">9</td>
+            <td style="text-align:center;" class="muted">6</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="stat-grid reveal reveal-delay-2" style="margin-top: 48px; padding-top: 40px; border-top: 2px solid var(--border-light);">
+      <div class="stat-item" style="text-align:center;">
+        <div class="stat-label">Scenario</div>
+      </div>
+      <div class="stat-item" style="text-align:center;">
+        <div class="stat-label">Low</div>
+        <div class="stat-value" style="color: var(--text-muted);">1.5×</div>
+        <div class="stat-detail">6% Net IRR</div>
+      </div>
+      <div class="stat-item" style="text-align:center;">
+        <div class="stat-label">Base</div>
+        <div class="stat-value">3.0×</div>
+        <div class="stat-detail">18% Net IRR</div>
+      </div>
+      <div class="stat-item" style="text-align:center;">
+        <div class="stat-label">Target</div>
+        <div class="stat-value">5.4×</div>
+        <div class="stat-detail">29% Net IRR</div>
+      </div>
+      <div class="stat-item" style="text-align:center;">
+        <div class="stat-label">High</div>
+        <div class="stat-value">8.1×</div>
+        <div class="stat-detail">37% Net IRR</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 15: KEY RISKS
+     ═══════════════════════════════════════════ -->
+<section class="section section--cream section--short" data-section="15" data-theme="light" style="padding-top: var(--section-pad); padding-bottom: var(--section-pad);">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Risk Factors</div>
+      <div class="gold-rule"></div>
+      <h2 class="headline-lg" style="margin-bottom: 40px;">Key Risks</h2>
+    </div>
+    <div class="risk-list">
+      <div class="risk-item reveal reveal-delay-1">
+        <div class="risk-item__title">Solo GP / Key Person Risk</div>
+        <div class="risk-item__text">The fund depends on Jeremy Atkin as sole decision-maker. Mitigated by a strong Advisory Board with fiduciary responsibility for managing the portfolio to liquidity in the event of GP incapacitation, and an operationally lean fund structure designed to minimize complexity.</div>
+      </div>
+      <div class="risk-item reveal reveal-delay-2">
+        <div class="risk-item__title">Early-Stage Hardtech Risk</div>
+        <div class="risk-item__text">Pre-revenue hardtech companies carry meaningful technology and commercialization risk. Mitigated by diversification across 20–25 companies, deep sector expertise, and a philosophy that prioritizes founders with commercial orientation.</div>
+      </div>
+      <div class="risk-item reveal reveal-delay-3">
+        <div class="risk-item__title">Liquidity Timeline</div>
+        <div class="risk-item__text">Hardtech typically has longer paths to exit than software. Mitigated by 10-year fund life with extensions, and active pursuit of secondary sale opportunities in parallel with funding rounds.</div>
+      </div>
+      <div class="risk-item reveal reveal-delay-4">
+        <div class="risk-item__title">Currency Risk</div>
+        <div class="risk-item__text">The fund is AUD-denominated. US investors bear AUD/USD exposure. The Australian dollar's historical correlation with commodity prices may provide a natural hedge given sector focus. Currency mix shifts as portfolio companies expand into the US.</div>
+      </div>
+      <div class="risk-item reveal reveal-delay-5">
+        <div class="risk-item__title">Regulatory / Policy Risk</div>
+        <div class="risk-item__text">Bandera invests only in companies whose business models are commercially viable independent of subsidies or regulatory incentives. Environmental benefits are a tailwind, not the foundation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 16: CTA
+     ═══════════════════════════════════════════ -->
+<section class="section section--dark" data-section="16" data-theme="dark">
+  <div class="container footer-cta">
+    <div class="reveal">
+      <div class="footer-cta__line"></div>
+      <div class="hero__name" style="margin-bottom: 24px;">Bandera Ventures</div>
+      <h2 class="headline-lg" style="margin-bottom: 16px;">Fund I is open.</h2>
+      <p class="body-lg" style="color: rgba(255,255,255,0.5); margin-bottom: 40px; max-width: 480px; margin-left: auto; margin-right: auto;">For inquiries regarding the fund, the portfolio, or co-investment opportunities, contact the founding partner directly.</p>
+      <p style="margin-bottom: 8px;">
+        <strong style="color: var(--text-light);">Jeremy Atkin</strong>
+      </p>
+      <p style="color: rgba(255,255,255,0.5); font-size: 0.95rem;">
+        jeremy@banderaventures.com
+      </p>
+    </div>
+    <div class="footer-legal reveal reveal-delay-1">
+      This document is confidential and intended solely for the use of the person or entity to whom it is addressed. It does not constitute an offer to sell or a solicitation of an offer to buy any securities. Past performance is not indicative of future results. All investments involve risk, including the potential loss of principal.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+     ═══════════════════════════════════════════ -->
+<script>
+(function() {
+  'use strict';
+
+  // ─── Reveal on scroll ────────────────────────────
+  const revealElements = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // ─── Comparison bars animate ─────────────────────
+  const barElements = document.querySelectorAll('.bar-animate');
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const width = entry.target.getAttribute('data-width');
+        entry.target.style.width = width;
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  barElements.forEach(el => barObserver.observe(el));
+
+  // ─── Top bar visibility ──────────────────────────
+  const topbar = document.getElementById('topbar');
+  const heroSection = document.querySelector('.hero');
+
+  const topbarObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        topbar.classList.remove('visible');
+      } else {
+        topbar.classList.add('visible');
+      }
+    });
+  }, { threshold: 0 });
+
+  topbarObserver.observe(heroSection);
+
+  // ─── Progress dots ───────────────────────────────
+  const sections = document.querySelectorAll('[data-section]');
+  const dotsContainer = document.getElementById('progressDots');
+
+  sections.forEach((section, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'progress-dot';
+    dot.setAttribute('data-index', i);
+    dot.addEventListener('click', () => {
+      section.scrollIntoView({ behavior: 'smooth' });
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = dotsContainer.querySelectorAll('.progress-dot');
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const index = parseInt(entry.target.getAttribute('data-section'));
+        const theme = entry.target.getAttribute('data-theme');
+
+        dots.forEach((dot, i) => {
+          dot.classList.remove('active', 'light');
+          if (theme === 'light') dot.classList.add('light');
+          if (i === index) dot.classList.add('active');
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(section => sectionObserver.observe(section));
+
+})();
+</script>
+
+</body>
+</html>
